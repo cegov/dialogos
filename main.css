@@ -1,0 +1,249 @@
+@font-face {
+    font-family: Aller;
+    src: url(font/Aller/Aller_Rg.ttf);
+}
+
+@font-face {
+    font-family: AllerLt;
+    src: url(font/Aller/Aller_Lt.ttf);
+}
+
+@font-face {
+    font-family: MontserratBlack;
+    src: url(font/montserrat/Montserrat-Black.otf);
+}
+
+@font-face {
+    font-family: MontserratHairline;
+    src: url(font/montserrat/Montserrat-Light.otf);
+}
+
+body {
+	font-family: "Aller", Arial, sans-serif;
+	font-size: 16px;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	z-index: 9999;
+}
+
+.nav-conferences {
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
+}
+
+.nav-conferences span {
+	display: inline-block;
+	padding: 2px 10px;
+	border: 1px solid black;
+	border-radius: 100%;
+	color: #373a3c;
+	transition: all .3s ease;
+}
+
+.nav-conferences span:hover {
+	background-color: #373a3c;
+	color: white;
+}
+
+.section-transition {
+	width: 100%;
+	height: 200px;
+}
+
+
+.container {
+	position: relative;
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.content {
+	width: 900px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.content-reverse .circle img {
+	left: none;
+	right: 10%;
+}
+
+.content-reverse .info {
+	left: 10%;
+	right: 0;
+}
+
+
+.info {
+	width: 600px;
+	color: white;
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
+}
+
+.circle:before {
+	content: '';
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	border: 2px dashed white;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	color: black;
+}
+
+.circle img {	
+	border-radius: 100%;
+	float: left;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+}
+
+.conference-section {
+	height: 800px;
+	margin-top: -10px;
+	position: relative;
+}
+
+.conference-section:first-of-type {
+	margin-top: 50px;
+}
+
+.conference-date {
+	font-family: "MontserratBlack", Arial, sans-serif;
+	font-size: 5rem;
+	font-weight: 700;
+	color: white;
+	color: #bc2424;
+}
+
+.svg-circle {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.svg-circle circle {
+	fill: #bc2424;
+	opacity: .5;
+}
+
+.svg-text {
+	font-family: "MontserratBlack", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	fill: black;
+	text-transform: uppercase;
+}
+
+.text-crop {
+	clip-path: url(#clipping);
+	fill: white;
+}
+
+.conference-number {
+	font-family: "MontserratHairline";
+	font-size: 1.2rem;
+
+	text-transform: uppercase;
+	margin-top: -15px;
+}
+
+.conference-title {
+	margin-top: 50px;
+}
+
+.conference-description {
+	font-family: "AllerLt", Arial, sans-serif;
+}
+
+.conference-panelist {
+	font-family: "AllerLt", Arial, sans-serif;
+	line-height: 1rem;
+	position: relative;
+}
+
+.conference-panelist span {
+	font-family: "Aller", Arial, sans-serif;
+}
+
+.conference-panelist img,
+.panelist-photo {
+	width: 40px;
+	border-radius: 100%;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	margin-top: -5px;
+	-webkit-filter: grayscale(1);
+  	filter: grayscale(1);
+}
+
+.conference-panelist p {
+	position: absolute;
+	top: 0;
+	left: 50px;
+}
+
+
+#conference-1,
+.transition-to-2{
+	background-color: #f7493d;
+}
+
+.transition-to-2 path,
+.transition-to-3 path {
+	fill: #f97f3d;
+}
+
+#conference-2 {
+	background-color: #f97f3d;
+}
+
+#conference-3,
+.transition-to-3,
+.transition-to-4 {
+	background-color: #ffd845;
+}
+
+.transition-to-4 path,
+.transition-to-5 path {
+	fill: #50b858;
+}
+
+#conference-4 {
+	background-color: #50b858;
+}
+
+#conference-5,
+.transition-to-5,
+.transition-to-6 {
+	background-color: #3ca7aa;
+}
+
+.transition-to-6 path {
+	fill: #1f747f;
+}
+
+#conference-6 {
+	background-color: #1f747f;
+}
