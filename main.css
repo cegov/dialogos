@@ -22,7 +22,6 @@ body {
 	font-family: "Aller", Arial, sans-serif;
 	font-size: 16px;
 	height: 100%;
-	overflow-x: hidden;
 }
 
 nav {
@@ -31,29 +30,68 @@ nav {
 	left: 0;
 	width: 100%;
 	height: 50px;
-	background-color: white;
+	background-color: #263238;
 	z-index: 9999;
 }
 
+.nav-menu {
+	margin-left: 50px;
+}
+
+.nav-menu p {
+	display: inline-block;
+	padding: 15px 30px 15px 0;
+	color: #ECEFF1;
+	text-transform: uppercase;
+	font-family: "AllerLt";
+	cursor: pointer;
+	transition: opacity .2s;
+}
+
+.nav-menu p:hover {
+	opacity: .5;
+}
+
 .nav-conferences {
-	position: absolute;
-	top: 50%;
-	right: 10%;
-	transform: translateY(-50%);
+	padding: 15px 0;
+	margin: -75px 50px 0 0;
+	float: right;
+	color: #ECEFF1;
+	text-transform: uppercase;
+	font-family: "AllerLt";
 }
 
 .nav-conferences span {
 	display: inline-block;
 	padding: 2px 10px;
-	border: 1px solid black;
 	border-radius: 100%;
-	color: #373a3c;
-	transition: all .3s ease;
+	color: #ECEFF1;
+	transition: background .2s;
+	cursor: pointer;
 }
 
-.nav-conferences span:hover {
-	background-color: #373a3c;
-	color: white;
+.nav-conferences a:nth-of-type(1) span:hover {
+	background: #bc2424;
+}
+
+.nav-conferences a:nth-of-type(2) span:hover {
+	background: #dd442a;
+}
+
+.nav-conferences a:nth-of-type(3) span:hover {
+	background: #e3a119;
+}
+
+.nav-conferences a:nth-of-type(4) span:hover {
+	background: #3c7c3c;
+}
+
+.nav-conferences a:nth-of-type(5) span:hover {
+	background: #2a7884;
+}
+
+.nav-conferences a:nth-of-type(6) span:hover {
+	background: #175b66;
 }
 
 .section-transition {
@@ -64,7 +102,6 @@ nav {
 
 .container {
 	position: relative;
-	width: 1000px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -85,14 +122,60 @@ nav {
 	right: 0;
 }
 
+.col-md-5 {
+	position: static;
+}
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.home-title {
+	text-transform: uppercase;
+	font-family: "Aller";
+	line-height: 2rem;
+	padding: 50px 0;
+	margin: 165px 350px 0;
+	text-align: center;
+	color: #263238;	
+	background-color: rgba(255,255,255,.5);
+}
+
+.home-title span {
+	font-size: 3.7rem;
+}
+
+.description-title {
+	text-transform: uppercase;
+	font-family: "Aller";
+	line-height: 2rem;
+	font-size: 2.05rem;
+	text-align: center;
+	margin-top: 200px;
+}
+
+.description-title span {
+	font-size: 3rem;
+}
+
+.description-info {
+	color: white;
+}
+
+.description-info p:first-child {
+	padding-top: 100px;
+}
+
+.description-info ul {
+	padding-bottom: 100px;
+}
+
 
 .info {
-	width: 600px;
-	color: white;
-	position: absolute;
-	top: 50%;
-	right: 10%;
-	transform: translateY(-50%);
+	max-width: 600px;
+	color: #fcfcfc;
+	padding: 80px 0 80px 20px;
 }
 
 .circle:before {
@@ -104,21 +187,34 @@ nav {
 	border: 2px dashed white;
 	position: absolute;
 	top: 50%;
-	left: 5%;
 	color: black;
 }
 
 .circle img {	
+	background-color: rgb(240,240,240);
 	border-radius: 100%;
-	float: left;
 	position: absolute;
 	top: 50%;
-	left: 10%;
 	transform: translateY(-50%);
 }
 
+.circle-left:before {
+	left: 5%
+}
+
+.circle-right:before {
+	right: 5%
+}
+
+.circle-left img {
+	left: 10%;
+}
+
+.circle-right img {
+	right: 10%;
+}
+
 .conference-section {
-	height: 800px;
 	margin-top: -10px;
 	position: relative;
 }
@@ -129,23 +225,31 @@ nav {
 
 .conference-date {
 	font-family: "MontserratBlack", Arial, sans-serif;
-	font-size: 5rem;
-	font-weight: 700;
-	color: white;
-	color: #bc2424;
+	font-size: 4rem;
 }
 
 .svg-circle {
-	width: 600px;
+	width: 100%;
 	height: 600px;
 	position: absolute;
 	top: 0;
 	right: 0;
+	background-color: white;
 }
 
-.svg-circle circle {
+.svg-circle circle:nth-of-type(1) {
 	fill: #bc2424;
-	opacity: .5;
+	opacity: .9;
+}
+
+.svg-circle circle:nth-of-type(2) {
+	fill: #1f747f;
+	opacity: .9;
+}
+
+.svg-circle circle:nth-of-type(3) {
+	fill: #50b858;
+	opacity: .9;
 }
 
 .svg-text {
@@ -204,46 +308,150 @@ nav {
 	left: 50px;
 }
 
-
-#conference-1,
-.transition-to-2{
-	background-color: #f7493d;
+.schedule-title {
+	font-family: "MontserratBlack", Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 50px;
 }
 
-.transition-to-2 path,
-.transition-to-3 path {
-	fill: #f97f3d;
+.schedule-date,
+.schedule-hour span {
+	font-family: "MontserratBlack", Arial, sans-serif;
+	font-size: 1.3rem;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+}
+
+.schedule-hour span {
+	display: block;
+}
+
+.schedule-hour{
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+.place-address {
+	text-align: center;
+}
+
+.date-title {
+	margin-bottom: 40px;
+	font-size: 1.1rem;
+}
+
+.realizador-title {
+	font-family: "MontserratBlack";
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 50px;
+}
+
+.realizador-images {
+	text-align: center;
+	padding: 0px 0 50px 0;
+}
+
+.realizador-images img {
+	max-height: 100px;
+	margin: 50px;
+}
+
+.mapa {
+	border-radius: 50%;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+
+/*
+-------------------------------------------------------
+	SECTIONS CONFIGS
+-------------------------------------------------------
+*/
+
+#home {	
+	height: 600px;
+	background: url('image/fundo.jpg') center no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	/*-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+  	filter: blur(2px);*/
+}
+
+#place,
+.transition-to-place {
+	background-color: #607D8B;
+	color: #fcfcfc;
+}
+
+.transition-to-place path {
+	fill: #fcfcfc;
+}
+
+#description {
+	background-color: #607D8B;
+	margin-top: 0px;
+}
+
+#schedule {
+	background-color: #fcfcfc;
+	color: #263238;
+	
+}
+
+.schedule-left {
+	text-align: right;
+}
+
+.transition-to-schedule {
+	background-color: #607D8B;
+}
+
+.transition-to-schedule path {
+	fill:  #fcfcfc;
+}
+
+#transition-to-place {
+	b
+}
+
+.transition-to-1 path {
+	fill: #607D8B;
+}
+
+#conference-1,
+.transition-to-1,
+.transition-to-2{
+	background: linear-gradient(to right, #bc2424, #f7493d);
 }
 
 #conference-2 {
-	background-color: #f97f3d;
+	background: linear-gradient(to right, #dd442a, #f97f3d);
 }
 
 #conference-3,
 .transition-to-3,
 .transition-to-4 {
-	background-color: #ffd845;
-}
-
-.transition-to-4 path,
-.transition-to-5 path {
-	fill: #50b858;
+	background: linear-gradient(to right, #e3a119, #ffd845);
 }
 
 #conference-4 {
-	background-color: #50b858;
+	background: linear-gradient(to right, #3c7c3c, #50b858);
 }
 
 #conference-5,
 .transition-to-5,
 .transition-to-6 {
-	background-color: #3ca7aa;
-}
-
-.transition-to-6 path {
-	fill: #1f747f;
+	background: linear-gradient(to right, #2a7884, #3ca7aa);
 }
 
 #conference-6 {
-	background-color: #1f747f;
+	background: linear-gradient(to right, #175b66, #1f747f);
 }
