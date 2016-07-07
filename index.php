@@ -111,219 +111,52 @@
 	    <path d="M0 0 C 50 100 80 100 100 0 Z" />
 	</svg>
 
-	<section class="conference-section" id="conference-1">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-5 circle circle-left">
-					<img src="http://placehold.it/350x350">
-				</div>
-				<div class="col-md-7 info">
-					<h1 class="conference-date">JUNHO <span>07</span></h1>
-					<p class="conference-number">Conferência I</p>
-					<h2 class="conference-title">Festas Populares e Indústria do Entretenimento</h2>
-					<p class="conference-description">
-						A conferência visa abordar a emergência da lógica e práticas típicas do campo da economia que têm garantido aos setores culturais mais tradicionais a condição de grandes mercados. A palestra abordará setores de manifestações culturais no sentido amplo, como festas populares e a história do desenvolvimento do mercado de televisão no Brasil.
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Paulo Miguez<br/>Universidade Federal da Bahia</p>
-					</div>
-					<div class="conference-panelist">
-						<img class="img-responsive" src="image/teste.jpg">
-						<p>Fábio Sá Earp<br/>Universidade Federal do Rio de Janeiro</p>
-					</div>
-				</div>
-			</div>
-		</article>
-	</section>
+	<?php
+		$json = file_get_contents('conferences.json');
+		$conferences = json_decode($json, true);
+	?>
 
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-2" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 100 C 20 0 50 0 100 100 Z" style="fill:url(#transition-to-2)"/>
-	    <linearGradient id="transition-to-2" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#dd442a" />
-        	<stop offset="100%" stop-color="#f97f3d" />
-    	</linearGradient>
-	</svg>
-
-	<section class="conference-section" id="conference-2">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-7 info">
-					<h1 class="conference-date">JULHO <span>05</span></h1>
-					<p class="conference-number">Conferência II</p>
-					<h2 class="conference-title">Economia da Música e do Audiovisual: uma visão do mercado a partir de realizadores</h2>
-					<p class="conference-description">
-						A conferência irá abordar os setores do cinema e da música a partir da visão dos realizadores. Os convidados apresentarão um panorama do setor musical e audiovisual no Brasil, bem como os principais entraves e vantagens para a produção cultural contemporânea. 
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Carlos Gerbase<br/> Pontifícia Universidade Católica do Rio Grande do Sul</p>
+	<?php foreach ($conferences as $key => $val) :?>
+		<?php foreach ($val as $a => $b) :?>
+			<section class="conference-section" id="conference-<?php echo $b['edition'];?>">
+				<article class="container">
+					<div class="line">
+						<div class="circle">
+							<img src="image/<?php echo $b['edition'];?>1.jpg">
+						</div>
+						<div class="info">
+							<h1 class="conference-date"><?php echo $b['date'];?></h1>
+							<p class="conference-number">Conferência <?php echo $b['edition'];?></p>
+							<h2 class="conference-title"><?php echo $b['title'];?></h2>
+							<p class="conference-description"><?php echo $b['description'];?></p>
+							<p>Palestrantes:</p>
+							<?php foreach ($b['panelists'] as $c => $d) :?>
+								<?php foreach ($d as $e => $f) :?>
+									<div class="conference-panelist">
+										<img src="image/teste.jpg">
+										<p><?php echo $f['name'];?></p>
+									</div>
+									<div class="conference-panelist">
+										<img class="img-responsive" src="image/teste.jpg">
+										<p><?php echo $f['name'];?></p>
+									</div>
+								<?php endforeach?>
+							<?php endforeach?>
+						</div>
 					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Pena Schimidt<br/>Universidade Federal do Rio Grande do Sul (Brasil)</p>
-					</div>
-				</div>
-				<div class="col-md-5 circle circle-right">
-					<img src="http://placehold.it/350x350">
-				</div>
-			</div>
-		</article>
-	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-3" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 0 C 50 100 80 100 100 0 Z" style="fill:url(#transition-to-3)" />
-	    <linearGradient id="transition-to-3" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#dd442a" />
-        	<stop offset="100%" stop-color="#f97f3d" />
-    	</linearGradient>
-	</svg>
-
-	<section class="conference-section" id="conference-3">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-5 circle circle-left">
-					<img src="http://placehold.it/350x350">
-				</div>
-				<div class="col-md-7 info">
-					<h1 class="conference-date">AGOSTO 08</h1>
-					<p class="conference-number">Conferência III</p>
-					<h2 class="conference-title">Políticas Culturais: Reflexões Contemporâneas</h2>
-					<p class="conference-description">
-						Os conferencistas debaterão o contexto de políticas culturais e seus impactos sobre as realidades culturais locais a partir de um olhar das esferas pública e privada. A atividade apresentará discussões contemporâneas sobre a construção de políticas públicas de cultura a fim de traçar um panorama histórico do papel do Estado e da iniciativa privada nesse processo de diálogo com as questões da participação social, da cidadania e da diversidade cultural. 
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Lia Calabre<br/>Fundação Casa de Rui Barbosa</p>
-					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Francisco Marshall<br/>Universidade Federal do Rio Grande do Sul</p>
-					</div>
-				</div>
-			</div>
-		</article>
-	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-4" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 100 C40 0 60 0 100 100 Z" style="fill:url(#transition-to-4)"/>
-	    <linearGradient id="transition-to-4" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#3c7c3c" />
-        	<stop offset="100%" stop-color="#50b858" />
-    	</linearGradient>
-	</svg>
-
-	<section class="conference-section" id="conference-4">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-7 info">
-					<h1 class="conference-date">SETEMBRO 13</h1>
-					<p class="conference-number">Conferência IV</p>
-					<h2 class="conference-title">Da nova economia à economia criativa</h2>
-					<p class="conference-description">
-						No centro das mudanças empreendidas pela chamada “nova economia” estão a economia colaborativa, as tecnologia da informação e os novas formas de trabalho. Assim, a conferência debaterá as novas condições de produção e circulação de bens culturais e criativos na sociedade contemporânea a partir dos dispositivos digitais e em rede, compreendendo a centralidade assumida pelas tecnologias na superação de modelos assimétricos de difusão. 
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Glaucia Campregher<br/>Universidade Federal do Rio Grande do Sul</p>
-					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Messias Bandeira<br/>Universidade Federal da Bahia</p>
-					</div>
-				</div>
-				<div class="col-md-5 circle circle-right">
-					<img src="http://placehold.it/350x350">
-				</div>
-			</div>
-		</article>
-	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-5" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 0 C 40 100 60 100 100 0 Z" style="fill:url(#transition-to-5)"/>
-	    <linearGradient id="transition-to-5" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#3c7c3c" />
-        	<stop offset="100%" stop-color="#50b858" />
-    	</linearGradient>
-	</svg>
-
-	<section class="conference-section" id="conference-5">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-5 circle circle-left">
-					<img src="http://placehold.it/350x350">
-				</div>
-				<div class="col-md-7 info">
-					<h1 class="conference-date">OUTUBRO 25</h1>
-					<p class="conference-number">Conferência V</p>
-					<h2 class="conference-title">A Cultura na Era Global </h2>
-					<p class="conference-description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Francisco Saboya<br/>Porto Digital - Recife</p>
-					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Marcos André Carvalho<br/>Rio Criativo</p>
-					</div>
-				</div>
-			</div>
-		</article>
-	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-6" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 100 C 20 0 50 0 100 100 Z" style="fill:url(#transition-to-6)" />
-	    <linearGradient id="transition-to-6" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#175b66" />
-        	<stop offset="100%" stop-color="#1f747f" />
-    	</linearGradient>
-	</svg>
-
-	<section class="conference-section" id="conference-6">
-		<article class="container">
-			<div class="row">
-				<div class="col-md-7 info">
-					<h1 class="conference-date">NOVEMBRO 21</h1>
-					<p class="conference-number">Conferência VI</p>
-					<h2 class="conference-title">Economia Criativa e comércio internacional: novos modelos de negócios</h2>
-					<p class="conference-description">
-						A conferência visa proporcionar um debate sobre os fluxos comerciais internacionais de bens e serviços oriundos das indústrias criativas, bem como os modelos de negócios associados a estes movimentos de internacionalização. De forma comparativa Brasil-França, serão apresentados estudos e indicadores que avaliam os impactos econômicos produzidos pelo comércio internacional pelas indústrias criativas. 
-					</p>
-					<p>Palestrantes:</p>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Leandro Valiati<br/>Universidade Federal do Rio Grande do Sul (Brasil)</p>
-					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>François Moreau<br/>Université Paris XIII</p>
-					</div>
-					<div class="conference-panelist">
-						<img src="image/teste.jpg">
-						<p>Paul Heritage<br/>Queen Mary University</p>
-					</div>
-				</div>
-				<div class="col-md-5 circle circle-right">
-					<img src="http://placehold.it/350x350">
-				</div>
-			</div>
-		</article>
-	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-realizador" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    <path d="M0 0 C 50 100 80 100 100 0 Z" style="fill:url(#transition-to-realizador)" />
-	    <linearGradient id="transition-to-realizador" x1="0%" y1="0%" x2="100%" y2="0%">
-        	<stop offset="0%" stop-color="#175b66" />
-        	<stop offset="100%" stop-color="#1f747f" />
-    	</linearGradient>
-	</svg>
+				</article>
+			</section>
+			<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-<?php echo ++$b['edition']; ?>" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+			    <path d="<?php echo $b['path']; ?>" style="fill:url('#transition-to-<?php echo $b['edition']; ?>')"/>
+			    <defs>
+				    <linearGradient id="transition-to-<?php echo $b['edition']; ?>" x1="0%" y1="0%" x2="100%" y2="0%">
+			        	<stop offset="0%" stop-color="<?php echo $b['color-1']; ?>" />
+			        	<stop offset="100%" stop-color="<?php echo $b['color-2']; ?>" />
+			    	</linearGradient>
+			    </defs>
+			</svg>
+		<?php endforeach?>
+	<?php endforeach?>
 
 	<section class="conference-section" id="realizador">
 		<article class="container">
