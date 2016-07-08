@@ -195,8 +195,7 @@ nav {
 }
 
 .circle img {
-	max-width: 350px;
-	border-radius: 100%;
+	
 }
 
 .conference-section {
@@ -373,7 +372,7 @@ nav {
 
 #place,
 .transition-to-place {
-	background-color: #607D8B;
+	background-color: #685F5D;
 	color: #fcfcfc;
 }
 
@@ -382,7 +381,7 @@ nav {
 }
 
 #description {
-	background-color: #607D8B;
+	background: linear-gradient(to right, #6F7071, #868686);
 	margin-top: 0px;
 }
 
@@ -397,7 +396,7 @@ nav {
 }
 
 .transition-to-schedule {
-	background-color: #607D8B;
+	background: linear-gradient(to right, #6F7071, #868686);
 }
 
 .transition-to-schedule path {
@@ -405,7 +404,7 @@ nav {
 }
 
 .transition-to-1 path {
-	fill: #607D8B;
+	fill: #685F5D;
 }
 
 #conference-1,
@@ -415,13 +414,13 @@ nav {
 }
 
 #conference-2 {
-	background: linear-gradient(to right, #dd442a, #f97f3d);
+	background: linear-gradient(to right, #e3a119, #ffd845);
 }
 
 #conference-3,
 .transition-to-3,
 .transition-to-4 {
-	background: linear-gradient(to right, #e3a119, #ffd845);
+	background: linear-gradient(to right, #bf6330, #f97f3d);
 }
 
 #conference-4 {
@@ -435,7 +434,7 @@ nav {
 }
 
 #conference-6 {
-	background: linear-gradient(to right, #175b66, #1f747f);
+	background: linear-gradient(to right, #4d5995, #5c6bc0);
 }
 
 

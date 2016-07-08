@@ -1,3 +1,50 @@
+<?php
+	session_start();
+	header('Cache-control: private'); // IE 6 FIX
+	 
+	if(isSet($_GET['lang']))
+	{
+	$lang = $_GET['lang'];
+	 
+	// register the session and set the cookie
+	$_SESSION['lang'] = $lang;
+	 
+	setcookie('lang', $lang, time() + (3600 * 24 * 30));
+	}
+	else if(isSet($_SESSION['lang']))
+	{
+	$lang = $_SESSION['lang'];
+	}
+	else if(isSet($_COOKIE['lang']))
+	{
+	$lang = $_COOKIE['lang'];
+	}
+	else
+	{
+	$lang = 'en';
+	}
+	 
+	switch ($lang) {
+	  case 'en':
+	  $lang_file = 'lang.en.php';
+	  break;
+	 
+	  case 'de':
+	  $lang_file = 'lang.de.php';
+	  break;
+	 
+	  case 'es':
+	  $lang_file = 'lang.es.php';
+	  break;
+	 
+	  default:
+	  $lang_file = 'lang.en.php';
+	 
+	}
+	 
+	include_once 'languages/'.$lang_file;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +61,16 @@
 			<a href="#description"><p>Sobre</p></a>
 			<a href="#schedule"><p>Programação</p></a>
 			<a href="#place"><p>Local</p></a>
+			<a href="?language=en">En</a>
+			<a href="?language=pt">Pt</a>
+			<?php
+				if ( !empty($_GET['language']) ) {
+				    $_COOKIE['language'] = $_GET['language'] === 'en' ? 'en' : 'pt';
+				} else {
+				    $_COOKIE['language'] = 'pt';
+				}
+				setcookie('language', $_COOKIE['language']);
+			?>
 		</div>
 		<div class="nav-conferences">
 			Conferências
@@ -112,7 +169,11 @@
 	</svg>
 
 	<?php
-		$json = file_get_contents('conferences.json');
+		if ( $_COOKIE['language'] == "en") {
+		   $json = file_get_contents('langs/en-US/conferences.json');
+		} else {
+		   $json = file_get_contents('langs/pt-BR/conferences.json');
+		}
 		$conferences = json_decode($json, true);
 	?>
 
@@ -122,7 +183,7 @@
 				<article class="container">
 					<div class="line">
 						<div class="circle">
-							<img src="image/<?php echo $b['edition'];?>1.jpg">
+							<img src="image/<?php echo $b['edition'];?>.png">
 						</div>
 						<div class="info">
 							<h1 class="conference-date"><?php echo $b['date'];?></h1>
