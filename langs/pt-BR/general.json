@@ -1,0 +1,22 @@
+{
+	"title":"Diálogos",
+	"dialogos":"<span>Diálogos em</span><br>Economia Criativa",
+	"home":"Início",
+	"about":"Sobre",
+	"dates":"Programação",
+	"place":"Local",
+	"conferences":"Conferências",
+	"conference":"Conferência",
+	"time":"Horários",
+	"speaker":"Palestrantes",
+	"organization":"Realização",
+	"description":[
+		{"paragraph":"Tendo em vista a demanda pelo aprofundamento de debates na área de Economia Criativa e da Cultura, o projeto “Diálogos em Economia Criativa” visa atuar na promoção de um espaço qualificado de discussão com pesquisadores nacionais e internacionais da área."},
+		{"paragraph":"O projeto propõe-se a realizar 6 conferências ao longo do ano letivo da UFRGS, buscando discutir três eixos centrais nas discussões contemporâneas da Economia Criativa:"}
+	],
+	"description-items":[	
+		{"items":"Fluxos internacionais e globalização de bens criativos;"},
+		{"items":"Novas perspectivas para mercados tradicionais de cultura;"},
+		{"items":"Gestão pública e privada para fomento da Economia da Cultura."}
+	]
+}

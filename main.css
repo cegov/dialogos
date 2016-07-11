@@ -138,8 +138,7 @@ nav {
 	padding: 50px 0;
 	margin: 165px 350px 0;
 	text-align: center;
-	color: #263238;	
-	background-color: rgba(255,255,255,.5);
+	color: white;	
 }
 
 .home-title span {
@@ -359,15 +358,7 @@ nav {
 
 #home {	
 	height: 600px;
-	background: url('image/fundo.jpg') center no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	/*-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-o-filter: blur(2px);
-  	filter: blur(2px);*/
+	background: linear-gradient(to top right, #f7493d, #5c6bc0);
 }
 
 #place,

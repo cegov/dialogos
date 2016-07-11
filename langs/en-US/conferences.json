@@ -7,20 +7,16 @@
 			"description":"The conference aims to focus on the advent of the typical economic practices and logics that have guaranteed a status of large markets to the traditional cultural sectors. The lecture will cover the sectors of cultural manifestations in the wide sense, such as popular festivities, and the history of the television market in Brazil.",
 			"panelists":[
 				{
-					"1": [
-						{
-							"name":"Paulo Miguez",
-							"filiation":"Universidade Federal da Bahia",
-							"picture":"teste"
-						}
-					],
-					"2": [
-						{
-							"name":"Fábio Sá Earp",
-							"filiation":"Universidade Federal do Rio de Janeiro",
-							"picture":"teste"
-						}
-					]
+					"name":"Paulo Miguez",
+					"university":"Universidade Federal da Bahia",
+					"resume":"doctor of Communication and Contemporary Culture (UFBA), vice-rector of the Federal University of Bahia (2014-2018) and professor of the Institute of Humanities, Arts and Science of UFBA and of the Multidisciplinary Program of Post-graduation on Culture and Society (UFBA).",
+					"picture":"pmiguez"
+				},
+				{
+					"name":"Fábio Sá Earp",
+					"university":"Universidade Federal do Rio de Janeiro",
+					"resume":"Economist and adjunct professor of UFRJ, who has experience in the area of Entertainment Economy, especially Economics of Culture, Tourism, and Sport. Writer of the book Bread and Circuses – Frontiers and perspectives of the entertainment economy (2002), among other important publications.",
+					"picture":"fearp"
 				}
 			],
 			"path":"M0 100 C 20 0 50 0 100 100 Z",
@@ -32,6 +28,20 @@
 			"date":"July 20",
 			"title":"Collaborative economy: creativity and the future of labor",
 			"description":"Collaborative economy, technologies of information, and new forms of labor are in the center of the changes made by the “new economy”. Therefore, the conference will debate the new conditions of production and circulation of cultural and creative goods in contemporary society, after the advent of digital and web gadgets, involving the centrality of the technologies in the overcoming of asymmetric models of diffusion.",
+			"panelists":[
+				{
+					"name":"Glaucia Campregher",
+					"university":"Universidade Federal do Rio Grande do Sul",
+					"resume":"Professor of the Department of Economics and International Relations of UFRGS and researcher of the Creative Economy Observatory (OBEC-UFRGS).",
+					"picture":"gcampregher"
+				},
+				{
+					"name":"Messias Bandeira",
+					"university":"Universidade Federal da Bahia",
+					"resume":"Doctor of Communication and Contemporary Culture (UFBA), adjunct professor of the Institute of Humanities, Arts and Science (IHAC-UFBA), and coordinator of the Creative Economy Observatory of Bahia",
+					"picture":"mbandeira"
+				}
+			],
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#e3a119",
 			"color-2":"#ffd845"
@@ -41,6 +51,20 @@
 			"date":"August 08",
 			"title":"Cultural policy: contemporary reflections",
 			"description":"The lecturers will debate the context of cultural policy and its impact on local cultural backgrounds, from a public and private spheres’ perspective. The speech will present contemporary discussions about the construction of cultural public policy, in order to set the historic outlook of the role of the State and the role of the private sector in this process, which interchanges with social participation, citizenship, and cultural diversity.",
+			"panelists":[
+				{
+					"name":"Lia Calabre",
+					"university":"Fundação Casa de Rui Barbosa",
+					"resume":"President of the Casa de Rui Barbosa Foundation, historian, master and doctor of Social History (UFF). Her principal areas of study are cultural policy and history of Brazilian radio.",
+					"picture":"lcalabre"
+				},
+				{
+					"name":"Francisco Marshall",
+					"university":"Universidade Federal do Rio Grande do Sul",
+					"resume":"Historian and doctor of Social History (USP), professor associate of the Federal University of Rio Grande do Sul, acting on the Department and Port-graduation program of History (IFCH) and in the Post-graduation program of Visual Arts (IA). Marshall is the founder and curator of StudioClio (POA).",
+					"picture":"fmarshall"
+				}
+			],
 			"path":"M0 100 C40 0 60 0 100 100 Z",
 			"color-1":"#3c7c3c",
 			"color-2":"#50b858"
@@ -50,24 +74,72 @@
 			"date":"September 13",
 			"title":"Musical and audiovisual economy: a glance at the market from the makers’ perspective",
 			"description":"The conference will discuss the cinema and music sectors, from the music and movie makers’ point of view. The lecturers will present the panorama of the audiovisual and musical sectors in Brazil, as well as the main obstacles and advantages for the contemporary cultural production.",
+			"panelists":[
+				{
+					"name":"Carlos Gerbase",
+					"university":"Pontifícia Universidade Católica do Rio Grande do Sul",
+					"resume":"Doctor of Social Communication, post-doctor of Cinema (Paris III University – Sorbonne Nouvelle, 2010). He is a professor at PUCRS, movie director, and owner of the production company Prana Filmes.",
+					"picture":"cgerbase"
+				},
+				{
+					"name":"Pena Schmidt",
+					"university":"Ex-presidente da Associação Brasileira da Música Brasileira",
+					"resume":"Musical producer, researcher, curator and musical consultant. Pena is a former director of Warner Music and owns the independent label Tinitus. He is also a former director of the Brazilian Association of Independent Music.",
+					"picture":"pschmidt"
+				}
+			],
 			"path":"M0 0 C 40 100 60 100 100 0 Z",
 			"color-1":"#3c7c3c",
 			"color-2":"#50b858"
 		},
 		{
 			"edition":"5", 
-			"date":"Outubro 24 ou 25",
-			"title":"A Cultura na Era Global",
-			"description":"A conferência visa abordar a emergência da lógica e práticas típicas do campo da economia que têm garantido aos setores culturais mais tradicionais a condição de grandes mercados. A palestra abordará setores de manifestações culturais no sentido amplo, como festas populares e a história do desenvolvimento do mercado de televisão no Brasil.",
+			"date":"October 24",
+			"title":"Culture in the Global Era",
+			"description":"The conference aims to debate contemporary culture as a resource that generates and attracts investment. The lecturers will present an outlook of social and economic development through culture, as well as the current technological mediations that operate these processes, less by instrumentality and more by performativity.",
+			"panelists":[
+				{
+					"name":"Francisco Saboya",
+					"university":"Porto Digital – Recife",
+					"resume":"-",
+					"picture":"fsaboya"
+				},
+				{
+					"name":"Marcos André Carvalho",
+					"university":"Rio Criativo",
+					"resume":"-",
+					"picture":"fsaboya"
+				}
+			],
 			"path":"M0 100 C 20 0 50 0 100 100 Z",
 			"color-1":"#4d5995",
 			"color-2":"#5c6bc0"
 		},
 		{
 			"edition":"6", 
-			"date":"Novembro",
-			"title":"Economia Criativa e comércio internacional: novos modelos de negócios",
-			"description":"A conferência visa proporcionar um debate sobre os fluxos comerciais internacionais de bens e serviços oriundos das indústrias criativas, bem como os modelos de negócios associados a estes movimentos de internacionalização. De forma comparativa Brasil-França, serão apresentados estudos e indicadores que avaliam os impactos econômicos produzidos pelo comércio internacional pelas indústrias criativas.",
+			"date":"November 16",
+			"title":"Creative economy and international trade: new business models",
+			"description":"The conference aims to propose a debate on international commercial flow of creative goods and services, as well as the business models associated to these processes of internationalization. In a way to compare Brazil and France, the lecturers will present researches and indicators that evaluate the economic impact made by the international trade of the Creative Industries.",
+			"panelists":[
+				{
+					"name":"Leandro Valiati",
+					"university":"Universidade Federal do Rio Grande do Sul",
+					"resume":"Professor of the Department of Economics and International Relations of UFRGS and coordinator of the Creative Economy Observatory (OBEC-UFRGS).",
+					"picture":"lvaliati"
+				},
+				{
+					"name":"François Moreau",
+					"university":"Paris XIII",
+					"resume":"Professor of Economics at the Paris XIII University and coordinator of LABEX ICCA (Cultural Industries and Artistic Creation).",
+					"picture":"fmoreau"
+				},
+				{
+					"name":"Paul Heritage",
+					"university":"Queen Mary University",
+					"resume":"-",
+					"picture":"pheritage"
+				}
+			],
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#4d5995",
 			"color-2":"#5c6bc0"
