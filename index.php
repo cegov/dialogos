@@ -185,7 +185,7 @@
 							<p><?php echo $general['speaker'];?>:</p>
 							<?php foreach ($b['panelists'] as $c => $d) :?>
 								<div class="conference-panelist">
-									<img src="<?php echo 'image/profiles/' . $d['picture'] . '.jpg';?>">
+									<img src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
 									<p><?php echo $d['name'];?><br/>
 										<?php echo $d['university'];?>
 									</p>

@@ -282,8 +282,6 @@ nav {
 	margin-right: 5px;
 	margin-bottom: 15px;
 	margin-top: -5px;
-	-webkit-filter: grayscale(1);
-  	filter: grayscale(1);
 }
 
 .conference-panelist p {
