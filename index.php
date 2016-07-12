@@ -31,34 +31,17 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-light bg-faded">
-		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-			&#9776;
-		</button>
-		<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-			<ul class="nav navbar-nav">
-				<li class="nav-item active">
-			    	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">About</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-	<nav >
+	<nav>
 		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
 			&#9776;
 		</button>
 		<div class="nav-menu collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-			<a href="#"><p><?php echo $general['home']?></p></a>
+			<ul class="menu-list">
+				<li>
+					<a class="menu-link" href="#"><span class="menu-label"><?php echo $general['home']?></span></a>
+				</li>
+			</ul>
+			<a href="#"><?php echo $general['home']?></a>
 			<a href="#description"><p><?php echo $general['about']?></p></a>
 			<a href="#schedule"><p><?php echo $general['dates']?></p></a>
 			<a href="#place"><p><?php echo $general['place']?></p></a>
@@ -175,7 +158,7 @@
 				<article class="container">
 					<div class="line">
 						<div class="circle">
-							<img src="image/<?php echo $b['edition'];?>.png">
+							<img class="img-fluid" src="image/<?php echo $b['edition'];?>.png">
 						</div>
 						<div class="info">
 							<h1 class="conference-date"><?php echo $b['date'];?></h1>
@@ -184,11 +167,27 @@
 							<p class="conference-description"><?php echo $b['description'];?></p>
 							<p><?php echo $general['speaker'];?>:</p>
 							<?php foreach ($b['panelists'] as $c => $d) :?>
-								<div class="conference-panelist">
+								<div class="conference-panelist" data-toggle="modal" data-target="<?php echo '#modal' . $d['picture']?>">
 									<img src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
 									<p><?php echo $d['name'];?><br/>
 										<?php echo $d['university'];?>
 									</p>
+								</div>
+								<div class="modal fade" id="<?php echo 'modal' . $d['picture']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<img class="modal-picture" src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
+												<h4 class="modal-title" id="myModalLabel"><?php echo $d['name'];?><span><?php echo $d['university'];?></span></h4>
+											</div>
+											<div class="modal-body">
+												<p><?php echo $d['resume'];?></p>
+											</div>
+										</div>
+									</div>
 								</div>
 							<?php endforeach?>
 						</div>

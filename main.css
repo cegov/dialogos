@@ -22,20 +22,16 @@ body {
 	font-family: "Aller", Arial, sans-serif;
 	font-size: 16px;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 nav {
 	position: fixed;
-	top: 0;
+	top: 50%;
 	left: 0;
-	width: 100%;
-	height: 50px;
-	background-color: #263238;
+	transform: translateY(-50%);
+	height: 50%;
 	z-index: 9999;
-}
-
-.nav-menu {
-	margin-left: 50px;
 }
 
 .nav-menu p {
@@ -50,6 +46,30 @@ nav {
 
 .nav-menu p:hover {
 	opacity: .5;
+}
+
+.nav-menu a:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: white;
+}
+
+.menu-list {
+	-webkit-padding-start: .5rem;
+}
+
+.menu-link .menu-label{
+	display: none;
+}
+
+.menu-link:hover .menu-label {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 20px;
 }
 
 .nav-conferences {
@@ -193,10 +213,6 @@ nav {
 	order: 2;
 }
 
-.circle img {
-	
-}
-
 .conference-section {
 	margin-top: -10px;
 	position: relative;
@@ -282,12 +298,14 @@ nav {
 	margin-right: 5px;
 	margin-bottom: 15px;
 	margin-top: -5px;
+	cursor: pointer;
 }
 
 .conference-panelist p {
 	position: absolute;
 	top: 0;
 	left: 50px;
+	cursor: pointer;
 }
 
 .schedule-title {
@@ -347,6 +365,48 @@ nav {
 	margin-bottom: 20px;
 }
 
+
+/*
+-------------------------------------------------------
+	MODAL CONFIGS
+-------------------------------------------------------
+*/
+.modal-dialog {
+	max-width: 500px;
+}
+
+.modal-content {
+	color: #263238;
+	background-color: #fcfcfc;
+	border-radius: 0;
+}
+
+.modal-picture {
+	max-width: 60px;
+	border-radius: 100%;
+}
+
+.modal-title {
+	font-family: "MontserratBlack", Arial, sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	margin-left: 70px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-transform: uppercase;
+}
+
+.modal-title span {
+	display: block;
+	font-size: .9rem;
+	font-family: "MontserratHairline", Arial, sans-serif;
+}
+
+.modal-header {
+	border-bottom: none;
+	position: relative;
+}
 
 /*
 -------------------------------------------------------
@@ -436,5 +496,8 @@ nav {
 @media (max-width: 1199px) {
 	.circle {
 		padding-bottom: 50px;
+	}
+	.conference-section:nth-of-type(even) .circle {
+		order: 0;
 	}
 }
