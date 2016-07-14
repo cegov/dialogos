@@ -18,6 +18,11 @@
     src: url(font/montserrat/Montserrat-Light.otf);
 }
 
+@font-face {
+    font-family: Adam;
+    src: url(font/adam/ADAM.CG_PRO.otf);
+}
+
 body {
 	font-family: "Aller", Arial, sans-serif;
 	font-size: 16px;
@@ -30,6 +35,7 @@ nav {
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
+	width: 200px;
 	height: 50%;
 	z-index: 9999;
 }
@@ -48,17 +54,34 @@ nav {
 	opacity: .5;
 }
 
-.nav-menu a:before {
+.menu-list {
+	-webkit-padding-start: .5rem;
+}
+
+.menu-list li {
+	position: relative;
+}
+
+.menu-link:before {
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	border: 2px solid #263238;
+	background-color: transparent;
+}
+
+.menu-link:hover:after {
 	content: '';
 	display: inline-block;
 	width: 10px;
 	height: 10px;
 	border-radius: 100%;
-	background-color: white;
-}
-
-.menu-list {
-	-webkit-padding-start: .5rem;
+	background-color: #263238;
+	position: absolute;
+	top: 4px;
+	left: 3px;
 }
 
 .menu-link .menu-label{
@@ -66,10 +89,27 @@ nav {
 }
 
 .menu-link:hover .menu-label {
-	display: block;
+	display: inline;
 	position: absolute;
-	top: 0;
+	top: -1.5px;
 	left: 20px;
+	font-size: .8rem;
+	color: white;
+	background-color: #263238;
+	padding: 1px 10px;
+	border-radius: 15px;
+}
+
+.active:after {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: red;
+	position: absolute;
+	top: 4px;
+	left: 3px;
 }
 
 .nav-conferences {
@@ -114,11 +154,30 @@ nav {
 	background: #175b66;
 }
 
+.world-img {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 9999;
+	cursor: pointer;
+	transition: transform .5s;
+}
+
+.world-img:hover {
+	transform: rotate(180deg);
+}
+
+.lang-dropdown {
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	left: initial;
+}
+
 .section-transition {
 	width: 100%;
 	height: 200px;
 }
-
 
 .container {
 	position: relative;
@@ -153,16 +212,29 @@ nav {
 
 .home-title {
 	text-transform: uppercase;
-	font-family: "Aller";
-	line-height: 2rem;
+	font-family: "Adam";
+	font-size: 2.27rem;
+	line-height: 1.4rem;
 	padding: 50px 0;
-	margin: 165px 350px 0;
-	text-align: center;
-	color: white;	
+	color: #FFA726;	
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	animation: pulse .5s infinite;
 }
 
 .home-title span {
-	font-size: 3.7rem;
+	font-size: 7rem;
+	letter-spacing: -.4rem;
+	color: white;
+	margin-left: -5px;
+}
+
+.home-img {
+	max-width: 100%;
+	position: absolute;
+	bottom: 100px;
+	animation: pulse 5s infinite;
 }
 
 .description-title {
@@ -216,10 +288,6 @@ nav {
 .conference-section {
 	margin-top: -10px;
 	position: relative;
-}
-
-.conference-section:first-of-type {
-	margin-top: 50px;
 }
 
 .conference-date {
@@ -415,8 +483,14 @@ nav {
 */
 
 #home {	
-	height: 600px;
-	background: linear-gradient(to top right, #f7493d, #5c6bc0);
+	position: relative;
+	height: 800px;
+	background: url('image/fundo.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	animation: pulse 5s infinite;
 }
 
 #place,
@@ -429,9 +503,21 @@ nav {
 	fill: #fcfcfc;
 }
 
+.transition-to-description {
+	
+	position: absolute;
+	bottom: 0;
+}
+
+.transition-to-description path {
+	fill: red;
+	fill-opacity:0;
+}
+
 #description {
-	background: linear-gradient(to right, #6F7071, #868686);
-	margin-top: 0px;
+	background-color: #6F7071;
+	/*background: linear-gradient(to right, #6F7071, #868686);*/
+	margin-top: -7px;
 }
 
 #schedule {
@@ -445,7 +531,8 @@ nav {
 }
 
 .transition-to-schedule {
-	background: linear-gradient(to right, #6F7071, #868686);
+	background-color: #6F7071;
+	/*background: linear-gradient(to right, #6F7071, #868686);*/
 }
 
 .transition-to-schedule path {
@@ -499,5 +586,23 @@ nav {
 	}
 	.conference-section:nth-of-type(even) .circle {
 		order: 0;
+	}
+}
+
+/*
+-------------------------------------------------------
+	KEYFRAMES CONFIGS
+-------------------------------------------------------
+*/
+
+@keyframes pulse {
+	0% {
+		-webkit-filter: saturate(1);
+	}
+	50% {
+		-webkit-filter: saturate(2);
+	}
+	100% {
+		-webkit-filter: saturate(1);
 	}
 }

@@ -28,54 +28,75 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 
-	<nav>
+	<nav id="sticky">
 		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
 			&#9776;
 		</button>
-		<div class="nav-menu collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+		<div class="nav-menu collapse navbar-toggleable-xs" id="exCollapsingNavbar2 main">
 			<ul class="menu-list">
 				<li>
-					<a class="menu-link" href="#"><span class="menu-label"><?php echo $general['home']?></span></a>
+					<a id="anchor" class="menu-link" href="#home"><span class="menu-label"><?php echo $general['home']?></span></a>
+				</li>
+				<li>
+					<a id="anchor" class="menu-link" href="#description"><span class="menu-label"><?php echo $general['about']?></span></a>
+				</li>
+				<li>
+					<a id="anchor" class="menu-link" href="#schedule"><span class="menu-label"><?php echo $general['dates']?></span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#place"><span class="menu-label"><?php echo $general['place']?></span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-1"><span class="menu-label"><?php echo $general['conference']?> 1</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-2"><span class="menu-label"><?php echo $general['conference']?> 2</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-3"><span class="menu-label"><?php echo $general['conference']?> 3</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-4"><span class="menu-label"><?php echo $general['conference']?> 4</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-5"><span class="menu-label"><?php echo $general['conference']?> 5</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#conference-6"><span class="menu-label"><?php echo $general['conference']?> 6</span></a>
+				</li>
+				<li>
+					<a class="menu-link" href="#realizador"><span class="menu-label"><?php echo $general['organization']?></span></a>
 				</li>
 			</ul>
-			<a href="#"><?php echo $general['home']?></a>
-			<a href="#description"><p><?php echo $general['about']?></p></a>
-			<a href="#schedule"><p><?php echo $general['dates']?></p></a>
-			<a href="#place"><p><?php echo $general['place']?></p></a>
-			
-			<div class="dropdown">
-				<img src="image/icon_lang.png" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			  		<a class="dropdown-item" href="?language=en">English</a>
-					<a class="dropdown-item" href="?language=pt">Português</a>
-			  	</div>
-			</div>
-		</div>
-		<div class="nav-conferences">
-			<?php echo $general['conferences']?>
-			<a href="#conference-1"><span>1</span></a>
-			<a href="#conference-2"><span>2</span></a>
-			<a href="#conference-3"><span>3</span></a>
-			<a href="#conference-4"><span>4</span></a>
-			<a href="#conference-5"><span>5</span></a>
-			<a href="#conference-6"><span>6</span></a>
 		</div>
 	</nav>
+
+	<div class="dropdown">
+		<img src="image/icon_lang.png" class="dropdown-toggle world-img" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<div class="dropdown-menu lang-dropdown" aria-labelledby="dropdownMenu1">
+			<a class="dropdown-item" href="?language=en">English</a>
+			<a class="dropdown-item" href="?language=pt">Português</a>
+		</div>
+	</div>
 
 	<section class="conference-section" id="home">
 		<!--<svg class="svg-circle" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin slice">
 			<circle cx="100" cy="0" r="50" />
 			<circle cx="10" cy="0" r="50" />
 		</svg>-->
-		<article class="row">
-			<div class="col-lg-12">
-				<h1 class="home-title"><?php echo $general['dialogos']?></h1>
-			</div>
+		<article>
+			<h1 class="home-title"><?php echo $general['dialogos']?></h1>
+			<!--<img src="image/fundo3.png" class="home-img">-->
 		</article>
+		<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-description" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+	    	<path d="M0 0 C 40 100 60 100 100 0 Z"></path>
+		</svg>
 	</section>
+
 
 	<section class="conference-section" id="description">
 		<article class="container">
