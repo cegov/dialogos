@@ -36,7 +36,6 @@ nav {
 	left: 0;
 	transform: translateY(-50%);
 	width: 200px;
-	height: 50%;
 	z-index: 9999;
 }
 
@@ -218,8 +217,9 @@ nav {
 	padding: 50px 0;
 	color: #FFA726;	
 	position: absolute;
-	top: 20%;
-	left: 10%;
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
 	animation: pulse .5s infinite;
 }
 
@@ -228,6 +228,18 @@ nav {
 	letter-spacing: -.4rem;
 	color: white;
 	margin-left: -5px;
+}
+
+.home-title:after {
+	content: url('image/arrow.png');
+	position: absolute;
+	bottom: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.home-fundo {
+	max-width: 30%;
 }
 
 .home-img {
@@ -383,17 +395,11 @@ nav {
 	padding-bottom: 50px;
 }
 
-.schedule-date,
-.schedule-hour span {
+.schedule-date {
 	font-family: "MontserratBlack", Arial, sans-serif;
 	font-size: 1.3rem;
 	margin-bottom: 0px;
 	text-transform: uppercase;
-	text-align: center;
-}
-
-.schedule-hour span {
-	display: block;
 }
 
 .schedule-hour{
@@ -410,7 +416,6 @@ nav {
 .date-title {
 	margin-bottom: 40px;
 	font-size: 1.1rem;
-	text-align: center;
 }
 
 .realizador-title {
@@ -432,11 +437,34 @@ nav {
 
 .mapa {
 	border-radius: 50%;
-	max-width: 500px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
+.button {
+	width: 200px;
+	height: 200px;
+	font-family: "MontserratBlack";
+	font-size: 1.5rem;
+	color: #fcfcfc;
+	text-transform: uppercase;
+	background-color: #FFA726;
+	border: 2px solid #FFA726;
+	border-radius: 100%;
+	display: block;
+	margin: 0 auto;
+	transition: all .5s ease;
+}
+
+.button:hover {
+	background-color: #fcfcfc;
+	color: #FFA726;
+
+}
+
+.link-button:hover {
+	text-decoration: none;
+}
 
 /*
 -------------------------------------------------------
@@ -488,12 +516,11 @@ nav {
 
 #home {	
 	position: relative;
-	height: 800px;
-	background: url('image/fundo.jpg');
+	/*background: url('image/fundo.jpg') no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 	animation: pulse 5s infinite;
 }
 
@@ -508,14 +535,13 @@ nav {
 }
 
 .transition-to-description {
-	
 	position: absolute;
-	bottom: 0;
+	bottom: -70px;
+	background-color: transparent;
 }
 
 .transition-to-description path {
-	fill: red;
-	fill-opacity:0;
+	fill: #6F7071;
 }
 
 #description {
@@ -530,7 +556,7 @@ nav {
 	
 }
 
-.schedule-left {
+.schedule-right {
 	text-align: right;
 }
 
@@ -592,12 +618,52 @@ nav {
 		order: 0;
 	}
 	.info {
-		max-width: 90%;
+		max-width: 95%;		
+	}
+}
+
+@media (max-width: 767px) {
+	.schedule-date,
+	.date-title {
+		text-align: center;
+	}
+	.container {
+		max-width: 100%;
+	}
+	.description-title {
+		display: none;
 	}
 }
 
 @media (max-width: 460px) {
 	#sticky {
+		display: none;
+	}
+	#home {
+		overflow: hidden;
+	}
+	.home-background {
+		transform: scale(1.3);
+	}
+	.conference-date {
+		font-size: 2rem;
+	}
+	.conference-title {
+		font-size: 1.3rem;
+	}
+	.realizador-images img {
+		max-height: 70px;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+	.section-transition {
+		height: 100px;
+	}
+	.section-transition path{
+		stroke: none;
+	}
+	.transition-to-description {
 		display: none;
 	}
 }

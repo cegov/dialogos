@@ -10,9 +10,11 @@
 	if ( $_COOKIE['language'] == "en") {
 	   $json = file_get_contents('langs/en-US/conferences.json');
 	   $teste = file_get_contents('langs/en-US/general.json');
+	   $background = 'image/fundo_en.jpg';
 	} else {
 	   $json = file_get_contents('langs/pt-BR/conferences.json');
 	   $teste = file_get_contents('langs/pt-BR/general.json');
+	   $background = 'image/fundo_pt.jpg';
 	}
 	$conferences = json_decode($json, true);
 	$general = json_decode($teste, true);
@@ -22,6 +24,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php echo $general['title']?></title>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
@@ -33,10 +36,7 @@
 <body>
 
 	<nav id="sticky">
-		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-			&#9776;
-		</button>
-		<div class="nav-menu collapse navbar-toggleable-xs" id="exCollapsingNavbar2 main">
+		<div class="nav-menu" id="main">
 			<ul class="menu-list">
 				<li>
 					<a id="anchor" class="menu-link" href="#home"><span class="menu-label"><?php echo $general['home']?></span></a>
@@ -89,11 +89,10 @@
 			<circle cx="10" cy="0" r="50" />
 		</svg>-->
 		<article>
-			<h1 class="home-title"><?php echo $general['dialogos']?></h1>
-			<!--<img src="image/fundo3.png" class="home-img">-->
+			<img src="<?php echo htmlspecialchars($background);?>" class="home-background img-fluid">			
 		</article>
 		<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-description" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-	    	<path d="M0 0 C 40 100 60 100 100 0 Z"></path>
+	    	<path d="M0 0 L100 0 L100 100 L0 100 L0 0 C 50 60 50 60 100 0 Z" />
 		</svg>
 	</section>
 
@@ -131,12 +130,24 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-6 schedule-right">
 					<?php foreach ($conferences as $key => $val) :?>
 						<?php foreach ($val as $a => $b) :?>
-							<p class="schedule-date"><?php echo $b['date'];?></p><p class="date-title"><?php echo $b['title'];?></p>
+							<p class="schedule-date"><?php echo $b['date'];?></p>
+							<?php explode(':', $b['title'] )?>
+							<p class="date-title"><?php echo $b['title'];?></p>
+							<?php if($a == 2)
+							 echo '</div><div class="col-md-6">';
+							?>
 						<?php endforeach;?>
 					<?php endforeach;?>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1SIjZ1nAUrQJfSGD3pkQmFGu9MR9_IN7QuvtyTJ47OUVAvA/viewform?c=0&w=1" class="link-button">
+							<button class="button">Inscrições</button>
+						</a>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -208,8 +219,8 @@
 					</div>
 				</article>
 			</section>
-			<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-<?php echo ++$b['edition']; ?>" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-			    <path d="<?php echo $b['path']; ?>" style="fill:url('#transition-to-<?php echo $b['edition']; ?>')"/>
+			<svg stroke="none" xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-<?php echo ++$b['edition']; ?>" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+			    <path stroke-width="0" d="<?php echo $b['path']; ?>" style="fill:url('#transition-to-<?php echo $b['edition']; ?>')"/>
 			    <defs>
 				    <linearGradient id="transition-to-<?php echo $b['edition']; ?>" x1="0%" y1="0%" x2="100%" y2="0%">
 			        	<stop offset="0%" stop-color="<?php echo $b['color-1']; ?>" />
