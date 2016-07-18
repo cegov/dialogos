@@ -126,24 +126,17 @@
 		<article class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="schedule-title"><?php echo $general['dates']?><br> 2016</h1>
+					<h1 class="schedule-title"><?php echo $general['dates']?> 2016</h1>
+					<p class="schedule-hour">(<?php echo $general['hour']?>)</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 schedule-left">
-					<p class="schedule-date">07 de Junho</p><p class="date-title">Festas Populares e Indústria do Entretenimento</p>
-					<p class="schedule-date">05 de Julho</p><p class="date-title">Economia da Música e do Audiovisual:<br>uma visão do mercado a partir de realizadores</p>
-					<p class="schedule-date">08 de Agosto</p><p class="date-title">Políticas Culturais: Reflexões Contemporâneas</p>
-				</div>
-				<div class="col-md-6">
-					<p class="schedule-date">13 de Setembro</p><p class="date-title"> Da nova economia à economia criativa</p>
-					<p class="schedule-date">25 de Outubro</p><p class="date-title">A Cultura na Era Global </p>
-					<p class="schedule-date">21 de Novembro</p><p class="date-title"> Economia Criativa e comércio internacional: <br>novos modelos de negócios</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<p class="schedule-hour"><span><?php echo $general['time']?></span>19h - 21h</p>
+				<div class="col-md-12">
+					<?php foreach ($conferences as $key => $val) :?>
+						<?php foreach ($val as $a => $b) :?>
+							<p class="schedule-date"><?php echo $b['date'];?></p><p class="date-title"><?php echo $b['title'];?></p>
+						<?php endforeach;?>
+					<?php endforeach;?>
 				</div>
 			</div>
 		</article>
@@ -186,7 +179,7 @@
 							<p class="conference-number"><?php echo $general['conference'] . ' ' . $b['edition'];?></p>
 							<h2 class="conference-title"><?php echo $b['title'];?></h2>
 							<p class="conference-description"><?php echo $b['description'];?></p>
-							<p><?php echo $general['speaker'];?>:</p>
+							<p><?php echo $b['panelists'] == NULL ? '' : $general['speaker'] . ':' ;?></p>
 							<?php foreach ($b['panelists'] as $c => $d) :?>
 								<div class="conference-panelist" data-toggle="modal" data-target="<?php echo '#modal' . $d['picture']?>">
 									<img src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
@@ -235,6 +228,7 @@
 					<div class="realizador-images">
 						<img src="image/obec.png">
 						<img src="image/cegov.png">
+						<img src="image/catavento.png">
 					</div>
 				</div>
 			</div>

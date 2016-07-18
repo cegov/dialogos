@@ -25,7 +25,7 @@
 		},
 		{
 			"edition":"2", 
-			"date":"July 20",
+			"date":"July 27",
 			"title":"Collaborative economy: creativity and the future of labor",
 			"description":"Collaborative economy, technologies of information, and new forms of labor are in the center of the changes made by the “new economy”. Therefore, the conference will debate the new conditions of production and circulation of cultural and creative goods in contemporary society, after the advent of digital and web gadgets, involving the centrality of the technologies in the overcoming of asymmetric models of diffusion.",
 			"panelists":[
@@ -121,24 +121,7 @@
 			"title":"Creative economy and international trade: new business models",
 			"description":"The conference aims to propose a debate on international commercial flow of creative goods and services, as well as the business models associated to these processes of internationalization. In a way to compare Brazil and France, the lecturers will present researches and indicators that evaluate the economic impact made by the international trade of the Creative Industries.",
 			"panelists":[
-				{
-					"name":"Leandro Valiati",
-					"university":"Universidade Federal do Rio Grande do Sul",
-					"resume":"Professor of the Department of Economics and International Relations of UFRGS and coordinator of the Creative Economy Observatory (OBEC-UFRGS).",
-					"picture":"lvaliati"
-				},
-				{
-					"name":"François Moreau",
-					"university":"Paris XIII",
-					"resume":"Professor of Economics at the Paris XIII University and coordinator of LABEX ICCA (Cultural Industries and Artistic Creation).",
-					"picture":"fmoreau"
-				},
-				{
-					"name":"Paul Heritage",
-					"university":"Queen Mary University",
-					"resume":"-",
-					"picture":"pheritage"
-				}
+				
 			],
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#4d5995",

@@ -25,7 +25,7 @@
 		},
 		{
 			"edition":"2", 
-			"date":"Julho 20",
+			"date":"Julho 27",
 			"title":"Economia colaborativa: criatividade e o futuro do trabalho",
 			"description":"No centro das mudanças empreendidas pela chamada “nova economia” estão a economia colaborativa, as tecnologias da informação e as novas formas de trabalho. Assim, a conferência debaterá as novas condições de produção e circulação de bens culturais e criativos na sociedade contemporânea a partir dos dispositivos digitais e em rede, compreendendo a centralidade assumida pelas tecnologias na superação de modelos assimétricos de difusão.",
 			"panelists":[
@@ -121,24 +121,7 @@
 			"title":"Economia Criativa e comércio internacional: novos modelos de negócios",
 			"description":"A conferência visa proporcionar um debate sobre os fluxos comerciais internacionais de bens e serviços oriundos das indústrias criativas, bem como os modelos de negócios associados a estes movimentos de internacionalização. De forma comparativa Brasil-França, serão apresentados estudos e indicadores que avaliam os impactos econômicos produzidos pelo comércio internacional pelas indústrias criativas.",
 			"panelists":[
-				{
-					"name":"Leandro Valiati",
-					"university":"Universidade Federal do Rio Grande do Sul",
-					"resume":"Professor do Departamento de Economia e Relações Internacionais da UFRGS e coordenador do Observatório de Economia Criativa (OBEC-UFRGS).",
-					"picture":"lvaliati"
-				},
-				{
-					"name":"François Moreau",
-					"university":"Paris XIII",
-					"resume":"Professor de Economia na universidade Paris XIII e coordenador do LABEX ICCA (Indústrias Culturais e Criação Artística).",
-					"picture":"fmoreau"
-				},
-				{
-					"name":"Paul Heritage",
-					"university":"Queen Mary University",
-					"resume":"-",
-					"picture":"pheritage"
-				}
+				
 			],
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#4d5995",

@@ -389,6 +389,7 @@ nav {
 	font-size: 1.3rem;
 	margin-bottom: 0px;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 .schedule-hour span {
@@ -397,7 +398,9 @@ nav {
 
 .schedule-hour{
 	text-align: center;
-	font-size: 1.1rem;
+	font-size: 1rem;
+	margin-top: -60px;
+	margin-bottom: 40px;
 }
 
 .place-address {
@@ -407,6 +410,7 @@ nav {
 .date-title {
 	margin-bottom: 40px;
 	font-size: 1.1rem;
+	text-align: center;
 }
 
 .realizador-title {
@@ -586,6 +590,15 @@ nav {
 	}
 	.conference-section:nth-of-type(even) .circle {
 		order: 0;
+	}
+	.info {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 460px) {
+	#sticky {
+		display: none;
 	}
 }
 
