@@ -19,6 +19,13 @@
 					"picture":"fearp"
 				}
 			],
+			"youtube":[
+				{
+					"name":"Assista a gravação da conferência",
+					"link":"https://youtu.be/Zl-QFgEKrfs"
+				}
+			],
+			"facebook":"https://www.facebook.com/events/1751397558431586/",
 			"path":"M0 100 C 20 0 50 0 100 100 Z",
 			"color-1":"#e3a119",
 			"color-2":"#ffd845"
@@ -42,6 +49,10 @@
 					"picture":"mbandeira"
 				}
 			],
+			"youtube":[
+			
+			],
+			"facebook":"https://www.facebook.com/events/1075936132495977/",
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#e3a119",
 			"color-2":"#ffd845"
@@ -65,6 +76,10 @@
 					"picture":"fmarshall"
 				}
 			],
+			"youtube":[
+			
+			],
+			"facebook":"",
 			"path":"M0 100 C40 0 60 0 100 100 Z",
 			"color-1":"#3c7c3c",
 			"color-2":"#50b858"
@@ -88,13 +103,33 @@
 					"picture":"pschmidt"
 				}
 			],
+			"youtube":[
+			
+			],
+			"facebook":"",
 			"path":"M0 0 C 40 100 60 100 100 0 Z",
 			"color-1":"#3c7c3c",
 			"color-2":"#50b858"
 		},
 		{
 			"edition":"5", 
-			"date":"Outubro 24",
+			"date":"Outubro 08",
+			"title":"Economia Criativa e comércio internacional: novos modelos de negócios",
+			"description":"A conferência visa proporcionar um debate sobre os fluxos comerciais internacionais de bens e serviços oriundos das indústrias criativas, bem como os modelos de negócios associados a estes movimentos de internacionalização. De forma comparativa Brasil-França, serão apresentados estudos e indicadores que avaliam os impactos econômicos produzidos pelo comércio internacional pelas indústrias criativas.",
+			"panelists":[
+				
+			],
+			"youtube":[
+			
+			],
+			"facebook":"",
+			"path":"M0 100 C 20 0 50 0 100 100 Z",
+			"color-1":"#4d5995",
+			"color-2":"#5c6bc0"
+		},
+		{
+			"edition":"6", 
+			"date":"Novembro 08",
 			"title":"A Cultura na Era Global",
 			"description":"A conferência visa debater a cultura contemporânea como um recurso que gera e atrai investimentos. Os convidados apresentarão um panorama do desenvolvimento econômico e social através da cultura, bem como as mediações tecnológicas hoje operantes nesses processos, menos de instrumentalidade e mais de performatividade.",
 			"panelists":[
@@ -111,18 +146,10 @@
 					"picture":"mcarvalho"
 				}
 			],
-			"path":"M0 100 C 20 0 50 0 100 100 Z",
-			"color-1":"#4d5995",
-			"color-2":"#5c6bc0"
-		},
-		{
-			"edition":"6", 
-			"date":"Novembro 16",
-			"title":"Economia Criativa e comércio internacional: novos modelos de negócios",
-			"description":"A conferência visa proporcionar um debate sobre os fluxos comerciais internacionais de bens e serviços oriundos das indústrias criativas, bem como os modelos de negócios associados a estes movimentos de internacionalização. De forma comparativa Brasil-França, serão apresentados estudos e indicadores que avaliam os impactos econômicos produzidos pelo comércio internacional pelas indústrias criativas.",
-			"panelists":[
-				
+			"youtube":[
+			
 			],
+			"facebook":"",
 			"path":"M0 0 C 50 100 80 100 100 0 Z",
 			"color-1":"#4d5995",
 			"color-2":"#5c6bc0"

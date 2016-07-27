@@ -1,4 +1,5 @@
 <?php
+	include_once("analyticstracking.php");
 	if ( !empty($_GET['language']) ) {
 	    $_COOKIE['language'] = $_GET['language'] === 'en' ? 'en' : 'pt';
 	} else {
@@ -10,31 +11,31 @@
 	if ( $_COOKIE['language'] == "en") {
 	   $json = file_get_contents('langs/en-US/conferences.json');
 	   $teste = file_get_contents('langs/en-US/general.json');
-	   $background = 'image/fundo_en.jpg';
 	} else {
 	   $json = file_get_contents('langs/pt-BR/conferences.json');
 	   $teste = file_get_contents('langs/pt-BR/general.json');
-	   $background = 'image/fundo_pt.jpg';
 	}
 	$conferences = json_decode($json, true);
 	$general = json_decode($teste, true);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang=<?php echo $_COOKIE['language'];?>>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php echo $general['title']?></title>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="main4.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 
+	<!-- Navbar -->
 	<nav id="sticky">
 		<div class="nav-menu" id="main">
 			<ul class="menu-list">
@@ -83,13 +84,11 @@
 		</div>
 	</div>
 
+	<!-- Home section -->
 	<section class="conference-section" id="home">
-		<!--<svg class="svg-circle" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin slice">
-			<circle cx="100" cy="0" r="50" />
-			<circle cx="10" cy="0" r="50" />
-		</svg>-->
 		<article>
-			<img src="<?php echo htmlspecialchars($background);?>" class="home-background img-fluid">			
+			<h1 class="title"><?php echo $general['dialogos']?></h1>
+			<a href="#description"> <img src="image/arrow.png" class="arrow img-fluid"></a>
 		</article>
 		<svg xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-description" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
 	    	<path d="M0 0 L100 0 L100 100 L0 100 L0 0 C 50 60 50 60 100 0 Z" />
@@ -99,11 +98,13 @@
 
 	<section class="conference-section" id="description">
 		<article class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<h1 class="description-title"><?php echo $general['dialogos']?></h1>
+			<div class="row line">
+				<div class="col-lg-6">
+					<div class="videoWrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/MQZCKGlzNdI?showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
-				<div class="col-md-7 description-info">
+				<div class="col-lg-6">
 					<?php foreach($general['description'] as $key => $value):?>
 						<p><?php echo $value['paragraph']; ?></p>
 					<?php endforeach;?>
@@ -133,9 +134,13 @@
 				<div class="col-md-6 schedule-right">
 					<?php foreach ($conferences as $key => $val) :?>
 						<?php foreach ($val as $a => $b) :?>
-							<p class="schedule-date"><?php echo $b['date'];?></p>
-							<?php explode(':', $b['title'] )?>
-							<p class="date-title"><?php echo $b['title'];?></p>
+							<div class="schedule-block">
+								<span class="schedule-number"><?php echo substr($b['date'], 0, 3)?></span>
+								<span class="schedule-number2"><?php echo substr($b['date'], -2)?></span>
+								<p class="schedule-conference"><span><?php echo $general['conference'] . ' ' . $b['edition'];?></span><?php echo $b['title'];?></p>
+							</div>
+							<!--<p class="schedule-date"><?php echo $b['date'];?></p>
+							<p class="date-title"><?php echo $b['title'];?></p>-->
 							<?php if($a == 2)
 							 echo '</div><div class="col-md-6">';
 							?>
@@ -144,8 +149,8 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1SIjZ1nAUrQJfSGD3pkQmFGu9MR9_IN7QuvtyTJ47OUVAvA/viewform?c=0&w=1" class="link-button">
-							<button class="button">Inscrições</button>
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1SIjZ1nAUrQJfSGD3pkQmFGu9MR9_IN7QuvtyTJ47OUVAvA/viewform?c=0&w=1" class="link-buttons">
+							<button class="button"><?php echo $general['registration']?></button>
 						</a>
 					</div>
 				</div>
@@ -167,7 +172,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<p class="place-address">Salão de Festas<br/>Reitoria da UFRGS<br>Av. Paulo Gama 110</p>
-					<img class="mapa img-fluid" src="image/mapa.png">
+					<a href="https://www.google.com.br/maps/@-30.0337546,-51.2191368,19.25z">
+						<img class="mapa img-fluid" src="image/mapa.png">
+					</a>
 				</div>
 			</div>
 		</article>
@@ -177,54 +184,98 @@
 	    <path d="M0 0 C 50 100 80 100 100 0 Z" />
 	</svg>
 
-	<?php foreach ($conferences as $key => $val) :?>
-		<?php foreach ($val as $a => $b) :?>
-			<section class="conference-section" id="conference-<?php echo $b['edition'];?>">
+	<!-- Conference sections -->
+	<?php foreach ($conferences as $conference) :?>
+		<?php foreach ($conference as $value) :?>
+			<section class="conference-section" id="conference-<?php echo $value['edition'];?>">
 				<article class="container">
 					<div class="line">
+
+						<!-- Image block -->
 						<div class="circle">
-							<img class="img-fluid" src="image/<?php echo $b['edition'];?>.png">
+							<img class="img-fluid tste" src="image/<?php echo $value['edition'];?>.png">
 						</div>
+						
+						<!-- Info block -->
 						<div class="info">
-							<h1 class="conference-date"><?php echo $b['date'];?></h1>
-							<p class="conference-number"><?php echo $general['conference'] . ' ' . $b['edition'];?></p>
-							<h2 class="conference-title"><?php echo $b['title'];?></h2>
-							<p class="conference-description"><?php echo $b['description'];?></p>
-							<p><?php echo $b['panelists'] == NULL ? '' : $general['speaker'] . ':' ;?></p>
-							<?php foreach ($b['panelists'] as $c => $d) :?>
-								<div class="conference-panelist" data-toggle="modal" data-target="<?php echo '#modal' . $d['picture']?>">
-									<img src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
-									<p><?php echo $d['name'];?><br/>
-										<?php echo $d['university'];?>
+							<h1 class="conference-date"><?php echo $value['date'];?></h1>
+							<p class="conference-number"><?php echo $general['conference'] . ' ' . $value['edition'];?></p>
+							<h2 class="conference-title"><?php echo $value['title'];?></h2>
+							<p class="conference-description"><?php echo $value['description'];?></p>
+
+							<!-- Panelists block -->
+							<h6 class="block-headline"><?php echo $value['panelists'] != NULL ? $general['speaker'] : '' ;?></h6>
+							<?php foreach ($value['panelists'] as $panelist) :?>
+								<div class="conference-modal" data-toggle="modal" data-target="<?php echo '#modal' . $panelist['picture']?>">
+									<img src="<?php echo 'image/profiles/' . $panelist['picture'] . '.png';?>">
+									<p><?php echo $panelist['name'];?><br/>
+										<?php echo $panelist['university'];?>
 									</p>
 								</div>
-								<div class="modal fade" id="<?php echo 'modal' . $d['picture']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal fade" id="<?php echo 'modal' . $panelist['picture']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 									<div class="modal-dialog" role="document">
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
 												</button>
-												<img class="modal-picture" src="<?php echo 'image/profiles/' . $d['picture'] . '.png';?>">
-												<h4 class="modal-title" id="myModalLabel"><?php echo $d['name'];?><span><?php echo $d['university'];?></span></h4>
+												<img class="modal-picture" src="<?php echo 'image/profiles/' . $panelist['picture'] . '.png';?>">
+												<h4 class="modal-title" id="myModalLabel"><?php echo $panelist['name'];?><span><?php echo $panelist['university'];?></span></h4>
 											</div>
 											<div class="modal-body">
-												<p><?php echo $d['resume'];?></p>
+												<p><?php echo $panelist['resume'];?></p>
 											</div>
 										</div>
 									</div>
 								</div>
 							<?php endforeach?>
+
+							<!-- Social Media block -->
+							<h6 class="block-headline"><?php echo ($value['youtube'] != NULL || $value['facebook'] != NULL) ? $general['seeMore'] : ''?></h6>
+							<?php if ($value['youtube'] != NULL):?>
+								<a href="<?php echo $d['link']?>" class="link-buttons" data-toggle="modal" data-target="#youtube">
+									<img class="video-icon" src="image/play.png">
+								</a>
+							<?php endif;?>
+							<?php if ($value['facebook'] != NULL):?>
+								<a href="<?php echo $value['facebook']?>" class="link-buttons" target="_blanck">
+									<img class="video-icon" src="image/facebook.png">
+								</a>
+							<?php endif;?>
+
+							<!-- Modal for youtube videos -->
+							<div class="modal fade" id="youtube" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<img class="modal-picture modal-video" src="image/video_2x.png">
+											<h4 class="modal-title" id="myModalLabel">Video</h4>
+										</div>
+										<div class="modal-body">
+										<?php foreach ($value['youtube'] as $data) :?>
+											<a class="modalVideo-item" href="<?php echo $data['link'];?>">
+												<?php echo $data['name'];?>
+											</a>
+										<?php endforeach?>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+
 						</div>
 					</div>
 				</article>
 			</section>
-			<svg stroke="none" xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-<?php echo ++$b['edition']; ?>" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-			    <path stroke-width="0" d="<?php echo $b['path']; ?>" style="fill:url('#transition-to-<?php echo $b['edition']; ?>')"/>
+			<svg stroke="none" xmlns="http://www.w3.org/2000/svg" class="section-transition transition-to-<?php echo ++$value['edition']; ?>" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+			    <path stroke-width="0" d="<?php echo $value['path']; ?>" style="fill:url('#transition-to-<?php echo $value['edition']; ?>')"/>
 			    <defs>
-				    <linearGradient id="transition-to-<?php echo $b['edition']; ?>" x1="0%" y1="0%" x2="100%" y2="0%">
-			        	<stop offset="0%" stop-color="<?php echo $b['color-1']; ?>" />
-			        	<stop offset="100%" stop-color="<?php echo $b['color-2']; ?>" />
+				    <linearGradient id="transition-to-<?php echo $value['edition']; ?>" x1="0%" y1="0%" x2="100%" y2="0%">
+			        	<stop offset="0%" stop-color="<?php echo $value['color-1']; ?>" />
+			        	<stop offset="100%" stop-color="<?php echo $value['color-2']; ?>" />
 			    	</linearGradient>
 			    </defs>
 			</svg>
@@ -236,12 +287,13 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h2 class="realizador-title"><?php echo $general['organization']; ?></h2>
-					<div class="realizador-images">
-						<img src="image/obec.png">
-						<img src="image/cegov.png">
-						<img src="image/catavento.png">
-					</div>
 				</div>
+				<div class="realizador-images">
+					<img src="image/obec.png">
+					<img src="image/cegov.png">
+					<img src="image/catavento.png">
+					<img src="image/brasil.png">
+				</div>				
 			</div>
 		</article>
 	</section>
