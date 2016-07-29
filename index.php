@@ -135,15 +135,10 @@
 					<?php foreach ($conferences as $key => $val) :?>
 						<?php foreach ($val as $a => $b) :?>
 							<div class="schedule-block">
-								<span class="schedule-number"><?php echo substr($b['date'], 0, 3)?></span>
-								<span class="schedule-number2"><?php echo substr($b['date'], -2)?></span>
-								<p class="schedule-conference"><span><?php echo $general['conference'] . ' ' . $b['edition'];?></span><?php echo $b['title'];?></p>
+								<p class="schedule-date"><?php echo $b['date'];?></p>
+								<p class="date-title"><?php echo $b['title'];?></p>
 							</div>
-							<!--<p class="schedule-date"><?php echo $b['date'];?></p>
-							<p class="date-title"><?php echo $b['title'];?></p>-->
-							<?php if($a == 2)
-							 echo '</div><div class="col-md-6">';
-							?>
+							<?php if($a == 2) echo '</div><div class="col-md-6">'; ?>
 						<?php endforeach;?>
 					<?php endforeach;?>
 				</div>
@@ -233,7 +228,7 @@
 							<!-- Social Media block -->
 							<h6 class="block-headline"><?php echo ($value['youtube'] != NULL || $value['facebook'] != NULL) ? $general['seeMore'] : ''?></h6>
 							<?php if ($value['youtube'] != NULL):?>
-								<a href="<?php echo $d['link']?>" class="link-buttons" data-toggle="modal" data-target="#youtube">
+								<a href="<?php echo $d['link']?>" class="link-buttons" data-toggle="modal" data-target="#youtube<?php echo $value['edition']?>">
 									<img class="video-icon" src="image/play.png">
 								</a>
 							<?php endif;?>
@@ -244,7 +239,7 @@
 							<?php endif;?>
 
 							<!-- Modal for youtube videos -->
-							<div class="modal fade" id="youtube" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal fade" id="youtube<?php echo $value['edition']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
